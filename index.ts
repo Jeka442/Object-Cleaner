@@ -1,3 +1,4 @@
+
 const isValue = (val: any) => {
   if (val === undefined || val === null) return false;
   if (Array.isArray(val) && val.length === 0) return false;
@@ -15,7 +16,7 @@ export const ClearObject: any = (obj: any) => {
     const temp = clone.filter((val) => isValue(val));
     return temp.map((val) => {
       return ClearObject(val);
-    });
+    })
   }
   if (typeof clone === 'object')
     Object.keys(clone).map((key) => {
